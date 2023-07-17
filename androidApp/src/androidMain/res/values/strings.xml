@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Service App</string>
+    <string name="add_vehicle_msg">Seem that you have not added any vehicle,\nclick add button to register vehicle</string>
+</resources>
