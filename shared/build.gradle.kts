@@ -26,13 +26,16 @@ kotlin {
     }
 
     sourceSets {
+
         val commonMain by getting {
+
             dependencies {
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
+
             }
         }
         val androidMain by getting {
@@ -73,4 +76,27 @@ android {
     kotlin {
         jvmToolchain(11)
     }
+}
+
+dependencies {
+    val voyagerVersion = "1.0.0-rc06"
+
+    // Multiplatform
+
+    // Navigator
+    commonMainApi("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
+    // BottomSheetNavigator
+    commonMainApi("cafe.adriel.voyager:voyager-bottom-sheet-navigator:$voyagerVersion")
+
+    // TabNavigator
+    commonMainApi("cafe.adriel.voyager:voyager-tab-navigator:$voyagerVersion")
+
+    // Transitions
+    commonMainApi("cafe.adriel.voyager:voyager-transitions:$voyagerVersion")
+    commonMainApi("dev.icerock.moko:media:0.11.0")
+
+    // Compose Multiplatform
+    commonMainApi("dev.icerock.moko:media-compose:0.11.0")
+
+    commonTestImplementation("dev.icerock.moko:media-test:0.11.0")
 }

@@ -39,3 +39,11 @@ android {
     }
 }
 
+dependencies {
+    commonMainApi("dev.icerock.moko:media:0.11.0")
+
+    // Compose Multiplatform
+    commonMainApi("dev.icerock.moko:media-compose:0.11.0")
+
+    commonTestImplementation("dev.icerock.moko:media-test:0.11.0")
+}
